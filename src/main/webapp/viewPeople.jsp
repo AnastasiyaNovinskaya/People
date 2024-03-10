@@ -34,44 +34,43 @@
 </head>
 <body>
 <h2>Hello People!</h2>
-<a href="viewPeople">View people</a>
 <a href="addPerson.jsp">Add person</a>
 <a href="deletePerson.jsp">Delete person</a>
 <a href="choosePerson.jsp">Change person</a>
 <br>
 <br>
 <br>
-<%--<form action="startPeople" method="post">
-<table style="width: 50%; margin: 0 auto; border-collapse: collapse; margin-bottom: 20px; border: 2px solid black;">
-    <tr>
-        <th style="width: 5%;">ID</th>
-        <th style="width: 40%;">Name</th>
-        <th style="width: 40%;">Surname</th>
-        <th style="width: 15%;">Age</th>
-    </tr>
-    <%
-        ArrayList<Person> people = (ArrayList<Person>) session.getAttribute("people");
-        if (people != null && !people.isEmpty()) {
-            for (Person person : people) {
-    %>
-    <tr>
-        <td><%= person.getId() %></td>
-        <td><%= person.getName() %></td>
-        <td><%= person.getSurname() %></td>
-        <td><%= person.getAge() %></td>
-    </tr>
-    <%
-        }
-    } else {
-    %>
-    <tr>
-        No people available.
-        <br>
-    </tr>
-    <%
-        }
-    %>
-</table>
-</form>--%>
+<form action="viewPeople" method="post">
+    <table style="width: 50%; margin: 0 auto; border-collapse: collapse; margin-bottom: 20px; border: 2px solid black;">
+        <tr>
+            <th style="width: 5%;">ID</th>
+            <th style="width: 40%;">Name</th>
+            <th style="width: 40%;">Surname</th>
+            <th style="width: 15%;">Age</th>
+        </tr>
+        <%
+            ArrayList<Person> people = (ArrayList<Person>) session.getAttribute("people");
+            if (people != null && !people.isEmpty()) {
+                for (Person person : people) {
+        %>
+        <tr>
+            <td><%= person.getId() %></td>
+            <td><%= person.getName() %></td>
+            <td><%= person.getSurname() %></td>
+            <td><%= person.getAge() %></td>
+        </tr>
+        <%
+            }
+        } else {
+        %>
+        <tr>
+            No people available.
+            <br>
+        </tr>
+        <%
+            }
+        %>
+    </table>
+</form>
 </body>
 </html>
