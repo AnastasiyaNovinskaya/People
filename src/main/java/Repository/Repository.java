@@ -21,7 +21,7 @@ public class Repository {
 
     public ArrayList<Person> getPeople() {
 
-        String getPeople = "SELECT * FROM mydb.people";
+        String getPeople = "SELECT * FROM people";
         ArrayList<Person> people = new ArrayList<>();
         try {
             Statement statement = connection.createStatement();
@@ -41,7 +41,7 @@ public class Repository {
     }
 
     public void addPerson(Person person) {
-        String addPerson = "INSERT INTO mydb.people (name, surname, age) values (?,?,?)";
+        String addPerson = "INSERT INTO people (name, surname, age) values (?,?,?)";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(addPerson);
             preparedStatement.setString(1, person.getName());
@@ -68,7 +68,7 @@ public class Repository {
 
 
     public void updatePerson(Person person) {
-        String updateQuery = "UPDATE mydb.people SET name = ?, surname = ?, age = ? WHERE id = ?";
+        String updateQuery = "UPDATE people SET name = ?, surname = ?, age = ? WHERE id = ?";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(updateQuery);
             preparedStatement.setString(1, person.getName());
