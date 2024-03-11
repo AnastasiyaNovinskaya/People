@@ -13,6 +13,11 @@ public class Repository {
         try {
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(DBConfiguration.url, DBConfiguration.user, DBConfiguration.password);
+            if (connection != null) {
+                System.out.println("Connected to the database");
+            } else {
+                System.out.println("Failed to connect to the database");
+            }
 
         } catch (SQLException | ClassNotFoundException exception) {
             System.err.println("An error occurred: " + exception.getMessage());
