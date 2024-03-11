@@ -12,7 +12,7 @@ public class Repository {
     public Repository() {
         try {
             Class.forName("org.postgresql.Driver");
-            connection = DriverManager.getConnection(DBConfiguration.url, DBConfiguration.user, DBConfiguration.password);
+            connection = DriverManager.getConnection("jdbc:postgresql://192.168.0.59:5432/mydb", "postgres", "Nastay12345");
             if (connection != null) {
                 System.out.println("Connected to the database");
             } else {
@@ -89,7 +89,7 @@ public class Repository {
     }
 
     public Person getPersonById(String id) {
-        String query = "SELECT * FROM people WHERE id = ?";
+        String query = "SELECT * FROM people WHERE id = CAST(? AS INTEGER)";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, id);
             ResultSet resultSet = statement.executeQuery();
