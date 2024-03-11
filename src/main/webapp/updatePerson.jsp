@@ -9,9 +9,9 @@
             margin: 0;
             overflow: hidden;
             display: flex;
-            align-items: center; /* Центрирование по вертикали */
-            justify-content: center; /* Центрирование по горизонтали */
-            height: 100vh; /* 100% высоты окна браузера */
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
             font-family: 'Arial', sans-serif;
             background-color: #f4f4f4;
         }
