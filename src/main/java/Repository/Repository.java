@@ -28,10 +28,10 @@ public class Repository {
             ResultSet resultSet = statement.executeQuery(getPeople);
             while (resultSet.next()) {
                 Person person = new Person();
-                person.setId(resultSet.getInt("ID"));
-                person.setName(resultSet.getString("Name"));
+                person.setId(resultSet.getInt("id"));
+                person.setName(resultSet.getString("name"));
                 person.setSurname(resultSet.getString("Surname"));
-                person.setAge(resultSet.getInt("Age"));
+                person.setAge(resultSet.getInt("age"));
                 people.add(person);
             }
         } catch (SQLException exception) {
