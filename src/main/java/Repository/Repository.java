@@ -12,7 +12,6 @@ public class Repository {
     public Repository() {
         try {
             Class.forName("org.postgresql.Driver");
-            //connection = DriverManager.getConnection("jdbc:postgresql://192.168.0.59:5432/mydb", "postgres", "Nastay12345");
             connection = DriverManager.getConnection(DBConfiguration.url, DBConfiguration.user, DBConfiguration.password);
             // Set isolation level
             connection.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
