@@ -23,7 +23,7 @@ public class Repository {
             }
 
         } catch (SQLException | ClassNotFoundException exception) {
-            System.err.println("An error occurred: " + exception.getMessage());
+            System.err.println("An error occurred : " + exception.getMessage());
         }
     }
 
