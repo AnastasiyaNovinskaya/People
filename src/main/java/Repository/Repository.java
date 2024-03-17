@@ -19,7 +19,7 @@ public class Repository {
             if (connection != null) {
                 System.out.println("Connected to the database");
             } else {
-                System.out.println("Failed to connect to the database");
+                System.out.println("Failed to connect to the database ");
             }
 
         } catch (SQLException | ClassNotFoundException exception) {
