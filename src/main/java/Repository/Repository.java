@@ -17,7 +17,7 @@ public class Repository {
             connection.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
             //
             if (connection != null) {
-                System.out.println("Connected to the database");
+                System.out.println("Connecte d to the database");
             } else {
                 System.out.println("Failed to connect to the database ");
             }
